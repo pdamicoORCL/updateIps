@@ -16,6 +16,7 @@
 #                                 line counts between
 #                                 ips.json and ips_new.txt
 #                                 if there are no new ips
+# Sun, Jul 22, 2018  9:38:05 AM
 
 if [ -f "~/ips.json" ] ; then
     rm ~/ips.json
