@@ -2,6 +2,13 @@
 
 Author: Phil D'Amico pdamico@tableau.com
 
+| Name | Relationship |
+| ----- | ------ |
+|Lisa | Wife |
+| Elena | Daugther |
+
+That was my table
+
 ## Summary
 
 This document is a proposed training for Partners. The goal is to provide a sandbox for practicing an install of Tableau Server on Linux. This training is designed to be administered in Skytap, with 2 Linux VMs
