@@ -1,5 +1,7 @@
 # Linux Install Training - Skytap Environment
 
+<!-- toc -->
+
 ## Summary
 
 This document is a proposed training for Partners. The goal is to provide a sandbox for practicing an install of Tableau Server on Linux. This training can be administered in Skytap, with 2 Linux VMs
