@@ -292,4 +292,6 @@ Here are some rough timings for steps in the training. Note the **Initialize** s
 }
 ```
 
-![Author: Phil D'Amico](https://pdamico.s3.amazonaws.com/photos/pdamico_small.jpg "This is me")
+![Author: Phil D'Amico](https://pdamico.s3.amazonaws.com/photos/pdamico_small.jpg "Phil D'Amico: Lead Solution Engineer, Tableau")
+pdamico@tableau.com
+
