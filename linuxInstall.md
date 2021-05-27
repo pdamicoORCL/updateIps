@@ -36,7 +36,7 @@ When finished, students will have:
     * SQL Server
     * Apache Directory Studio (LDAP Browser)
 
-## Part 0: Launch Environment
+## 1: Launch Environment
 
 1. Press Power button in upper-right
 1. Click on **Empty Ubuntu Image 30GB** to launch in your browser
@@ -45,9 +45,9 @@ When finished, students will have:
 1. Right-click the Desktop. Click **Open Terminal Here**
 
 
-## Part 1: Prepare the Environment
+## 2: Prepare the Environment
 
-### Update Linux Repositories 
+### 2.1: Update Linux Repositories 
 
 Enter the following commands. Accept all prompts. **Note:** The "sudo" password is **node2**
 
@@ -57,7 +57,7 @@ sudo apt-get upgrade
 sudo apt-get -y install gdebi-core
 ```
 
-### Install Tableau Server Package
+### 2.2: Install Tableau Server Package
 
 **Note**: The **LOC=** line below sets a bash variable, which is then used on the next line. This shortens the commands so they fit on one screen
 
@@ -71,20 +71,20 @@ sudo $LOC/scripts.20211.21.0320.1853/initialize-tsm --accepteula
 * Logout completely (select from menu)
 * Open Terminal Window
 
-### Apply License and Register
+### 2.3: Apply License and Register
 
 ```
 tsm licenses activate -k <your_license_key>
 tsm register --file ~/Desktop/register.json
 ```
 
-## Part 2: Configure LDAP
+## 3: Configure LDAP
 
-### Review LDAP Server Presentation 
+### 3.1: Review LDAP Server Presentation 
 
 Link to Google Slides: [LDAP and Tableau Server](https://docs.google.com/presentation/d/1rZk6ttog0vy7OnTyFrKQBOsp2IGvwZytrcV96cWA3ow/edit?usp=sharing)
 
-### Test LDAP Connectivity  
+### 3.2: Test LDAP Connectivity  
 
 ```
 ldapsearch -h train-vm \
@@ -95,7 +95,7 @@ ldapsearch -h train-vm \
 **Note**: The backslash at the end of each line lets you enter a command on multiple lines.
 
 
-### Configure LDAP Identity Store
+### 3.3 Configure LDAP Identity Store
 
 ```
 tsm settings import -f ~/Desktop/config.ldap.json 
@@ -103,22 +103,22 @@ tsm user-identity-store verify-user-mappings -v dev01
 tsm user-identity-store verify-group-mappings -v Dev
 ```
 
-## Part 3: Finish Installation
+## 4: Finish Installation
 
-### Initialize Tableau Server 
+### 4.1: Initialize Tableau Server 
 
 ```
 tsm pending-changes apply
 tsm initialize --start-server --request-timeout 1800
 ```
 
-### Enable Metadata Services
+### 4.2: Enable Metadata Services
 
 ```
 tsm maintenance metadata-services enable
 ```
 
-### Add Administrator
+### 4.3: Add Administrator
 
 ```
 tabcmd initialuser \
@@ -128,11 +128,11 @@ tabcmd initialuser \
 ```
 
 
-## Part 4: Install SQL Server Driver (Linux)  
+## 5: Install SQL Server Driver (Linux)  
 
 SQL is installed on *train-vm*. You have to install the SQL Server driver on the Tableau Server.  
 
-### Install UnixOdbc Driver
+### 5.1: Install UnixOdbc Driver
 
 At a terminal, enter the following (**node2** is the sudo password):  
 
@@ -140,7 +140,7 @@ At a terminal, enter the following (**node2** is the sudo password):
 sudo apt install unixodbc
 ```
 
-### Install Tableau SQL Server Driver
+### 5.2: Install Tableau SQL Server Driver
 
 * Go to [Driver Download](https://www.tableau.com/support/drivers)  
 * Scroll to **Microsoft SQL Server**  
@@ -152,16 +152,16 @@ sudo dpkg -i ~/Downloads/msodbcsql17_17.5.1.1-1_amd64.deb
 ```
 
 
-## Part 5: Initial Configuration
+## 6: Initial Configuration
 
-### Content Model / Do this First
+### 6.1: Content Model / Do this First
 
 * Login as Server Administrator (admin / admin)
 * Modify Permissions for Default Project. Remove ALL permissions from the **All Users** Group
 
-## Part 6: Groups and Permissions
+## 7: Groups and Permissions
 
-### Import Finance Group
+### 7.1: Import Finance Group
 
 * Create Finance Project 
 	* Click **Explore**
@@ -176,7 +176,7 @@ sudo dpkg -i ~/Downloads/msodbcsql17_17.5.1.1-1_amd64.deb
 	* Set all to **Creator** (dropdown list)
 	* Click **Import**
 
-### Set Permissions for Finance Group  
+### 7.2: Set Permissions for Finance Group  
 
 * Check Permissions for Finance01 User (Optional)
 	* Sign Out
@@ -198,7 +198,7 @@ sudo dpkg -i ~/Downloads/msodbcsql17_17.5.1.1-1_amd64.deb
 	* Can you see the **Finance** Project?
 
 
-## References
+## Part 6References
 
 Ctrl-Click or Cmd-Click links to open in a new window
 
