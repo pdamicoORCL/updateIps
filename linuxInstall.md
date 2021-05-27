@@ -198,6 +198,8 @@ sudo dpkg -i ~/Downloads/msodbcsql17_17.5.1.1-1_amd64.deb
 
 ## References
 
+Ctrl-Click or Cmd-Click links to open in a new window
+
 * [Get Started with Tableau Server on Linux](https://help.tableau.com/current/server-linux/en-us/get_started_server.htm)
 * [Jump-Start Installation](https://help.tableau.com/current/server-linux/en-us/jumpstart.htm)
 * [Install and Configure Tableau Server](https://help.tableau.com/current/server-linux/en-us/install_config_top.htm)
