@@ -59,7 +59,7 @@ sudo apt-get -y install gdebi-core
 
 ### Install Tableau Server Package
 
-**Note**: The `LOC=` line below sets a bash variable, which is then used on the next line. This shortens the commands so they fit on one screen
+**Note**: The `**LOC=**` line below sets a bash variable, which is then used on the next line. This shortens the commands so they fit on one screen
 
 ```
 sudo gdebi -n ~/Desktop/tableau-server-2021-1-0_amd64.deb
